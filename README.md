@@ -26,8 +26,8 @@ Fulfill user stories below:
 
 ### Links
 
-- Solution URL: [Repo](https://github.com/karinaestaba/interior-consultant.git)
-- Live Site URL: [Demo](https://karinaestaba.github.io/interior-consultant)
+- Solution URL: [Repo](https://github.com/karinaestaba/interior-consultant-landing.git)
+- Live Site URL: [Demo](https://karinaestaba.github.io/interior-consultant-landing)
 
 ## My process
 

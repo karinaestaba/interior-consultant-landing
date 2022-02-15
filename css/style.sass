@@ -1,0 +1,182 @@
+$dark-color: hsla(270, 4%, 9%, 1)
+$light-color: hsla(0, 0%, 100%, 1)
+$font-primary: 'Montserrat', sans-serif
+$font-secondary: 'Lora', serif
+
+*,
+*::after,
+*::before
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html,
+body
+  background: $dark-color
+
+  font-family: $font-primary
+  font-size: 44px
+  line-height: 29px
+  font-weight: 400
+  color: $light-color
+
+body
+  display: grid
+  grid-template-rows: auto 1fr
+
+a
+  color: $light-color
+  text-decoration: none
+  font-weight: 500
+
+  &:active,
+  &:focus,
+  &:hover,
+    color: $light-color
+
+img
+  width: 100%
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+  height: 100%
+
+.main
+  &-header
+    display: flex
+    justify-content: space-between
+    width: 100%
+    padding-top: 42px 
+    padding-bottom: 42px 
+
+  &-logo
+    font-family: 'Crimson Pro', serif
+    font-weight: 200
+    font-size: 14px
+    line-height: 16px
+    border: 1px solid $light-color
+    padding: .2rem
+    text-transform: uppercase
+
+  &-menu
+    list-style: none
+    display: flex
+    grid-gap: 2rem
+
+.menu-item
+  > a
+    font-size: 18px
+    line-height: 22px
+    padding-bottom: 8px
+    transition: opacity 1s
+
+    &.active
+      border-bottom: 2px solid $light-color
+
+    &:hover
+      opacity: .3
+      transition: opacity 1s
+
+.hero
+  height: 100%
+  display: grid
+  grid-template-columns: 2fr 3fr
+  gap: 2rem
+  align-items: center
+
+  &-text-section
+    padding-right: 1rem
+
+  &-title
+    font-family: $font-secondary
+    font-weight: 500
+    font-size: 48px
+    line-height: 61px
+    margin-bottom: 40px
+
+  &-description
+    white-space: pre-line
+    margin-bottom: 48px
+  
+  &-cta
+    display: flex
+    align-items: center
+    gap: .2rem
+
+    font-weight: 700
+    font-size: 18px
+    line-height: 22px
+
+  &-img-section
+    background: pink
+    position: relative
+
+  &-img
+    > img
+      height: 100%
+      object-fit: cover
+
+.card
+  display: flex
+  gap: 11px
+  flex-direction: column
+  background: green
+
+  width: 410px
+  position: absolute
+  right: 34px
+  bottom: -15%
+
+  background: $dark-color
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  padding: 26px
+
+  &-header
+    display: flex
+    gap: .5rem
+    align-items: center
+
+  &-img
+    > img
+      width: 40px
+      height: 40px
+      border-radius: 50%
+
+  &-user
+    &-name
+      display: block
+      font-weight: 500
+      font-size: 14px
+      line-height: 17px
+      margin-bottom: 8px
+
+    &-description
+      display: block
+      font-weight: 500
+      font-size: 12px
+      line-height: 15px
+      color: hsla(0, 0%, 51%, 1)
+
+  &-title
+    grid-area: c-title
+    font-family: $font-secondary
+    font-size: 24px
+    line-height: 31px
+    font-weight: 700
+    white-space: pre-line
+
+.icon
+  width: auto
+  display: inline-block
+  filter: invert(90%)
+ 
+@media screen and (min-width: 998px)
+  body
+    height: 100%
+    min-height: 100vh
+    font-size: 18px
+    line-height: 27px
+
+  
+

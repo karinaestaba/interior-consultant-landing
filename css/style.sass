@@ -13,10 +13,11 @@ $font-secondary: 'Lora', serif
 html,
 body
   background: $dark-color
+  padding-bottom: 61px
 
   font-family: $font-primary
-  font-size: 44px
-  line-height: 29px
+  font-size: 14px
+  line-height: 17px
   font-weight: 400
   color: $light-color
 
@@ -38,17 +39,19 @@ img
   width: 100%
 
 .container
-  max-width: 1200px
   margin: 0 auto
-  height: 100%
+  padding: 0 13px
 
 .main
   &-header
     display: flex
     justify-content: space-between
+    align-items: center
     width: 100%
-    padding-top: 42px 
-    padding-bottom: 42px 
+    padding-top: 19px 
+    padding-bottom: 19px
+    margin-bottom: 38px
+    background: $dark-color
 
   &-logo
     font-family: 'Crimson Pro', serif
@@ -56,13 +59,15 @@ img
     font-size: 14px
     line-height: 16px
     border: 1px solid $light-color
-    padding: .2rem
+    padding: .5rem
     text-transform: uppercase
 
   &-menu
     list-style: none
-    display: flex
-    grid-gap: 2rem
+    display: none
+    grid-gap: 3rem
+    
+    transition: 0.5s
 
 .menu-item
   > a
@@ -80,10 +85,6 @@ img
 
 .hero
   height: 100%
-  display: grid
-  grid-template-columns: 2fr 3fr
-  gap: 2rem
-  align-items: center
 
   &-text-section
     padding-right: 1rem
@@ -91,25 +92,25 @@ img
   &-title
     font-family: $font-secondary
     font-weight: 500
-    font-size: 48px
-    line-height: 61px
-    margin-bottom: 40px
+    font-size: 36px
+    line-height: 46px
+    margin-bottom: 25px
 
   &-description
+    margin-bottom: 25px
     white-space: pre-line
-    margin-bottom: 48px
   
   &-cta
     display: flex
     align-items: center
-    gap: .2rem
+    gap: .7rem
+    margin-bottom: 26px
 
     font-weight: 700
-    font-size: 18px
-    line-height: 22px
+    font-size: 14px
+    line-height: 17px
 
   &-img-section
-    background: pink
     position: relative
 
   &-img
@@ -121,12 +122,13 @@ img
   display: flex
   gap: 11px
   flex-direction: column
-  background: green
+  margin-top: 1rem
+  width: 300px
 
-  width: 410px
   position: absolute
-  right: 34px
+  right: 13px
   bottom: -15%
+  margin-top: 0
 
   background: $dark-color
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -147,36 +149,139 @@ img
     &-name
       display: block
       font-weight: 500
-      font-size: 14px
-      line-height: 17px
-      margin-bottom: 8px
+      font-size: 12px
+      line-height: 15px
+      margin-bottom: 5px
 
     &-description
       display: block
       font-weight: 500
-      font-size: 12px
-      line-height: 15px
+      font-size: 10px
+      line-height: 12px
       color: hsla(0, 0%, 51%, 1)
 
   &-title
     grid-area: c-title
     font-family: $font-secondary
-    font-size: 24px
-    line-height: 31px
+    font-size: 18px
+    line-height: 23px
     font-weight: 700
-    white-space: pre-line
 
 .icon
   width: auto
   display: inline-block
-  filter: invert(90%)
- 
+
+.toggle-nav
+  background-color: transparent
+  border: none
+  padding-top: 2px
+  z-index: 2
+  cursor: pointer
+
+#toggle-nav
+  display: none
+
+  &:checked
+    + .toggle-nav
+      content: url("/img/icon/close.svg")
+      height: 40px
+      position: fixed
+      right: 1rem
+      top: 1rem
+
+      + .main-menu
+        height: 100vh
+        position: absolute
+        right: 0
+        left: 0
+        z-index: 1
+        top: 0
+        bottom: 0
+
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        text-align: center
+        background: $dark-color
+
+        transition: 0.3s
+
+@media screen and (min-width: 528px)
+  .hero
+    &-description
+      white-space: normal
+
 @media screen and (min-width: 998px)
+  html,
   body
     height: 100%
     min-height: 100vh
-    font-size: 18px
-    line-height: 27px
-
+    font-size: 24px
+    line-height: 29px
+    padding-bottom: 0
   
+  .toggle-nav
+    display: none
 
+  .container
+    max-width: 1200px
+    margin: 0 auto
+    height: 100%
+    padding-top: 25px
+    padding-bottom: 25px
+
+  .main
+    &-header
+      padding-top: 42px
+      padding-bottom: 42px
+      margin-bottom: 0
+
+    &-menu
+      display: flex
+
+    &-logo
+      padding: .2rem
+
+  .hero
+    display: grid
+    grid-template-columns: 2fr 3fr
+    gap: 2rem
+    align-items: center
+    
+    &-title
+      font-size: 48px
+      line-height: 61px
+      margin-bottom: 40px
+
+    &-description
+      margin-bottom: 48px
+      white-space: pre-line
+
+    &-cta
+      font-size: 18px
+      line-height: 22px
+      margin-bottom: 0
+      gap: .2rem
+
+  .card
+    right: 34px
+    width: 410px
+
+    &-user
+      &-name
+        font-size: 14px
+        line-height: 17px
+        margin-bottom: 8px
+
+      &-description
+        font-size: 12px
+        line-height: 15px
+
+    &-title
+      font-size: 24px
+      line-height: 31px
+
+  .icon
+    height: 30px

@@ -1,4 +1,4 @@
-# Dev Challenges - Page 404
+# Dev Challenges - Interior consultant landing
 
 This is a solution to the [Interior consultant challenge on Dev Challenges](https://devchallenges.io/challenges/Jymh2b2FyebRTUljkNcb#). Create a homepage following the design. The page should be responsive.
 

@@ -33,7 +33,7 @@ a
 
   &:active,
   &:focus,
-  &:hover,
+  &:hover
     color: $light-color
 
 img
@@ -184,14 +184,14 @@ img
 
   &:checked
     + .toggle-nav
-      content: url("../img/icon/close.svg")
+      content: url("../images/icon/close.svg")
       height: 40px
       position: fixed
       right: 1rem
       top: 1rem
 
       + .main-menu
-        height: 100vh
+        height: 110vh
         position: absolute
         right: 0
         left: 0
@@ -219,14 +219,19 @@ footer
     padding-top: 119px
 
     a
-      color: lighten($dark-color, 25%)
-      font-weight: 700
+      color: white
+      font-weight: 300
       text-decoration: none
+      transition: all 0.3s ease-in-out
+      white-space: nowrap
 
       &:hover,
       &:active,
       &:focus
         color: darken($medium-color, 10%)
+
+      img
+        width: 10px
 
 @media screen and (min-width: 528px)
   .hero
